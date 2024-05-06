@@ -1,0 +1,33 @@
+.title-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.dark-container{
+    background-color: #12002b;
+    padding-top: 8px;
+    padding-bottom: 30px;
+}
+
+.profile-title{
+    color: #fff;
+}
+
+.edit-button{
+    display: block;
+    width: 90px;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    border-color: #00bc77;
+    background-color: #00bc77;
+    color: #fff;
+}
+
+.editUser-link{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
