@@ -7,6 +7,7 @@ import Footer from '../components/footer/Footer'
 import SignIn from '../pages/signIn/SignIn'
 import UserPage from '../pages/user/UserPage'
 import EditUser from '../pages/editUserName/EditUser'
+import Error from '../pages/error/Error'
 
 export default function AppRouter() {
   return (
@@ -14,9 +15,11 @@ export default function AppRouter() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/signIn" element={<SignIn />} />
           <Route path="/userProfile" element={<UserPage />} />
           <Route path="/editUser" element={<EditUser />} />
+          <Route path="/*" element={<Error />} />
         </Routes>
         <Footer />
       </BrowserRouter>
