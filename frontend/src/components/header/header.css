@@ -11,3 +11,13 @@
     width: 200px;
 }
 
+@media screen and (max-width: 769px){
+    .App-logo{
+        max-width: 100%;
+        width: 150px;
+    }
+
+    .App-header{
+        gap: 20px;
+    }
+}

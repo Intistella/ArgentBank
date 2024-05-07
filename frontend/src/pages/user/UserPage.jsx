@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom'
 
 
 
-
+ 
 export default function UserPage() {
-    const {firstName, lastName} = useSelector((state) => state.userProfile)
+    const {userName} = useSelector((state) => state.userProfile)
     
 
     return(
@@ -16,13 +16,13 @@ export default function UserPage() {
             <section className="title-bar">
                 <h1>
                     <span className="profile-title">Welcome back</span> <br />
-                    <span className="profile-title">{` ${firstName} ${lastName} !`}</span>
+                    <span className="profile-title">{` ${userName}`}</span>
                 </h1>
                 <Link to='/editUser' className="editUser-link">
                     <button className="edit-button">Edit Name</button>
                 </Link>
             </section>
-            <Transactions />
+            <Transactions className='account' />
         </main>
     )
 

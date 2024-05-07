@@ -46,3 +46,15 @@
     background-color: #00bc77;
     color: #fff;
   }
+
+  @media screen and (max-width: 769px){
+    .account{
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .transaction-button {
+      width: 250px;
+    }
+}
+

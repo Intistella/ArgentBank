@@ -29,3 +29,29 @@
     margin-bottom: 0;
     font-size: 1.2rem;
   }
+
+  @media screen and (max-width: 769px){
+    .hero {
+      background-image: url('../../assets/images/bank-tree.webp');
+      background-position: 0 0;
+      height: 250px;
+    }
+
+    .hero-content {
+      top: 60px;
+      width: 200px;
+      padding: 2rem;
+      margin-right: 50px;
+    }
+
+    .hero-content .subtitle {
+      font-weight: bold;
+      font-size: 14px;
+      margin: 0;
+    }
+    
+    .hero-content .text {
+      margin-bottom: 0;
+      font-size: 12px;
+    }
+}

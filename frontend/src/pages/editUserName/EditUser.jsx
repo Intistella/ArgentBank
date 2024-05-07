@@ -4,12 +4,13 @@ import { useDispatch, useSelector } from "react-redux"
 import { validateLength, validateNewUserName } from '../../services/FormValidat'
 import { updateUsernameAsync } from '../../redux/UserSlice'
 import './editUser.css'
+import Transaction from '../../components/transaction/Transaction'
 
 export default function EditUserName () {
     const dispatch = useDispatch() 
     const navigate = useNavigate()
 
-    const { userName } = useSelector(
+    const { userName, firstName, lastName } = useSelector(
         (state) => state.userProfile
     )
 
@@ -45,26 +46,49 @@ export default function EditUserName () {
     }
     return(
         <main className="editPage-container">
-            <h1 className="edit-title">Edit your username</h1>
+            <h1 className="edit-title">Edit user info</h1>
             <form className="editForm" onSubmit={submitHandler}>
-                <label className="editLabel" htmlFor="newUserName">New username</label>
-                <input 
-                    type="text" 
-                    id="newUserName" 
-                    name="newUserName" 
-                    value={newUserName} 
-                    onChange={editHandler}
-                    className={error? 'editInput' : ''}
-                />
+                <div className="form-container">
+                    <div className="input-container">
+                        <label className="editLabel" htmlFor="newUserName">User name:</label>
+                        <input 
+                            type="text" 
+                            placeholder={userName}
+                            id="newUserName" 
+                            name="newUserName" 
+                            value={newUserName} 
+                            onChange={editHandler}
+                            className={error? 'editInput' : ''}
+                        />
+                    </div>
+                    <div className="input-container">
+                        <label className="editLabel" htmlFor="first-name">First Name:</label>
+                        <input
+                            type="text"
+                            id="first-name"
+                            disabled
+                            placeholder={firstName}
+                        />
+                    </div>
+                    <div className="input-container">
+                        <label className="editLabel" htmlFor="last-name">Last Name:</label>
+                        <input
+                            type="text"
+                            id="last-name"
+                            disabled
+                            placeholder={lastName}
+                        />    
+                    </div>
+                </div>
                 <div className="button-container">
                     <button type="submit" className="editButton">Save</button>
-                    <button onClick={() => navigate("/userProfile")} className="editButton">Cancel editing</button>
+                    <button onClick={() => navigate("/userProfile")} className="editButton">Cancel</button>
                 </div>
             </form>
-            <div className="error-container"> 
+            <div className="errorMessage-container">
                 <p className="errorMessage">{error}</p>
             </div>
-            
+            <Transaction className="accountEdit" />
         </main>
     )
 }

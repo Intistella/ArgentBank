@@ -20,3 +20,11 @@
     flex-direction: row;
     gap: 15px;
 }
+
+@media screen and (max-width: 769px){
+    .navBar-item{
+        font-size: 15px;
+        gap: 4px;
+        justify-content: center;
+    }
+}

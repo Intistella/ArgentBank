@@ -2,10 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getUserPage, updateUserPage, loginUser } from '../services/Api'
 import { logout } from "../services/AuthN"
 
+
 const initialState = {
     signedIn: false,
     token: null, 
-    userProfile: {},
+    userProfile: {}
 }
 
 const userSlice = createSlice({
@@ -86,7 +87,7 @@ export const signInAsync = (username, password, rememberMe) => {
             dispatch(setConnexion(true))
             return true
         } catch (error) {
-            console.error("Error", error)
+            console.error("Error in sign-in", error)
             return { success: false, error }
         }
     }
